@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Business from './Business'
+import BusinessList from './BusinessList'
 
 function App() {
   return (
@@ -18,7 +19,9 @@ function App() {
         imageUrl="https://example.com/business-image.jpg"
         />
       </section>
-      
+      <section>
+        <BusinessList />
+      </section>
     </div>
   );
 }
