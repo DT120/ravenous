@@ -7,17 +7,7 @@ function App() {
   return (
     <div className="App">
       <section>
-        <Business
-        name="Sample Business"
-        address="123 Main Street"
-        city="Cityville"
-        state="State"
-        zipcode="12345"
-        category="Fast Food"
-        rating={4.5}
-        reviewCount={123}
-        imageUrl="https://example.com/business-image.jpg"
-        />
+        <Business/>
       </section>
       <section>
         <BusinessList />
