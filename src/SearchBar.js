@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
 
 // Define the SearchBar component as a functional component
 const SearchBar = ({ onSearch }) => {

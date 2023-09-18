@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Import components
 import SearchBar from './SearchBar';
@@ -14,7 +15,7 @@ function App() {
 
       <section>
         {/* Render the Business component */}
-        <Business />
+       {/* <Business /> */} 
       </section>
 
       <section>

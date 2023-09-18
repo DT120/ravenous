@@ -18,26 +18,26 @@ const Business = () => {
   // Render the business information using JSX
   return (
     <div className="business">
+    <div className="business-header">
       <div className="image-container">
-        {/* Display the business image with alt text */}
         <img src={business.imageSrc} alt={business.name} />
       </div>
       <h2>{business.name}</h2>
-      <div className="business-information">
-        <div className="business-address">
-          {/* Display the address, city, state, and zip code */}
-          <p>{business.address}</p>
-          <p>{business.city}, {business.state} {business.zipCode}</p>
-        </div>
-        <div className="business-reviews">
-          <h3>{business.category}</h3>
-          {/* Display the rating and review count */}
-          <h3 className="rating">{business.rating} stars</h3>
-          <p>{business.reviewCount} reviews</p>
-        </div>
-      </div>
     </div>
-  );
+    <div className="business-address">
+      <h3>{business.address}</h3>
+      <h3>{business.city}</h3>
+      <h3>{business.state} {business.zipCode}</h3>
+    </div>
+    <div className="business-reviews">
+      <div className="business-reviews-details">
+        <h3>{business.category}</h3>
+        <h3 className="rating">{business.rating} stars</h3>
+        <h3>{business.reviewCount} reviews</h3>
+      </div>
+   </div>
+</div>
+);
 }
 
 // Export the Business component to make it available for use in other parts of the application
