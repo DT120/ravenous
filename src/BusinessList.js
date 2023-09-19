@@ -1,20 +1,18 @@
-import Business from "./Business"; // Import the Business component
+import React from 'react';
+import Business from './Business';
 
 // Define the BusinessList component as a functional component
-const BusinessList = () => {
-  // Define an array of businesses with sample data
-  const businesses = [1, 2, 3, 4, 5, 6, 7 ,8 ,9 ,10]
-    // Add more business objects with sample data as needed
-;
+const BusinessList = (props) => {
+  const { restaurants } = props;
 
   return (
     <div className="business-list">
-      {/* Map through the businesses array and render Business components */}
-      {businesses.map((business) => (
-        <Business key={business.id} {...business} />
+      {/* Map through the restaurants array and render Business components */}
+      {restaurants.map((restaurant) => (
+        <Business key={restaurant.id} {...restaurant} />
       ))}
     </div>
   );
 }
 
-export default BusinessList; // Export the BusinessList component for use in other parts of the application
+export default BusinessList;

@@ -4,8 +4,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Import components
 import SearchBar from './SearchBar';
-import Business from './Business';
 import BusinessList from './BusinessList';
+
+const restaurants = [
+  {
+    id: 1,
+    imageSrc: 'https://content.codecademy.com/programs/react/ravenous/pizza.jpg',
+    name: 'MarginOtto Pizzeria',
+    address: '1010 Paddington Way',
+    city: 'Flavortown',
+    state: 'NY',
+    zipCode: '10101',
+    category: 'Italian',
+    rating: 4.5,
+    reviewCount: 90,
+  },
+  // Add more restaurant objects here if needed
+];
 
 function App() {
   return (
@@ -14,13 +29,8 @@ function App() {
       <SearchBar />
 
       <section>
-        {/* Render the Business component */}
-       {/* <Business /> */} 
-      </section>
-
-      <section>
         {/* Render the BusinessList component */}
-        <BusinessList />
+        <BusinessList restaurants={restaurants} />
       </section>
     </div>
   );
