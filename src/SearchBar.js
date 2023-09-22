@@ -33,7 +33,7 @@ const SearchBar = ({ onSearch }) => {
     onSearch(searchTerm, searchLocation, sortBy);
   };
 
-  // Handle search with 'Enter' click
+  // Handle search with 'Enter' key press
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       handleSearch();
@@ -78,7 +78,7 @@ const SearchBar = ({ onSearch }) => {
         ))}
       </select>
       {/* Search button */}
-      <button  onClick={handleSearch}>Search</button>
+      <button onClick={handleSearch}>Search</button>
     </div>
   );
 };

@@ -7,16 +7,16 @@ import SearchBar from './SearchBar';
 import BusinessList from './BusinessList';
 import { getSearch } from './utils/API';
 
-
-
 function App() {
-
+  // State to store the list of restaurants
   const [restaurants, setRestaurants] = useState([]);
 
+  // Function to perform a Yelp search and update the restaurant state
   const searchYelp = async (searchTerm, searchLocation, sortBy) => {
-    console.log('button clicked');
+    console.log('Button clicked');
     
     try {
+      // Call the API function to retrieve restaurant data
       const searchData = await getSearch(searchTerm, searchLocation, sortBy);
       console.log('searchData:', searchData);
   
@@ -40,11 +40,11 @@ function App() {
     <div className="App">
       <h1>Ravenous!</h1>
       <br/>
-      {/* Render the SearchBar component */}
+      {/* Render the SearchBar component and pass the searchYelp function as a prop */}
       <SearchBar onSearch={searchYelp} />
 
       <section>
-        {/* Render the BusinessList component */}
+        {/* Render the BusinessList component and pass the restaurant data as a prop */}
         <BusinessList restaurants={restaurants} />
       </section>
     </div>

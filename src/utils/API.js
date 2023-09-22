@@ -1,8 +1,9 @@
 const api = '6rMXH_SEfMCGZkPJBlJ0FFNWZeJO7V6Y6yiGyJRiHnbU_9wkfR9NLGGtQsvoZm3X6DsHxiKIv-xGVpbKwHCXNAPA1Uqv4fgzeDPIGov49xCKATntoaxMVcku4WcMZXYx';
 
-const corsPermission= 'https://cors-anywhere.herokuapp.com/'
+const corsPermission = 'https://cors-anywhere.herokuapp.com/';
 const yelpAPI = 'https://api.yelp.com/v3';
 
+// Function to fetch Yelp search results based on search term, location, and sort order
 export async function getSearch(searchTerm, searchLocation, sortBy) {
   const businessSearch = '/businesses/search';
   const infoSearch = `?term=${searchTerm}&location=${searchLocation}&sort_by=${sortBy}`;
@@ -14,7 +15,6 @@ export async function getSearch(searchTerm, searchLocation, sortBy) {
       headers: {
         Authorization: `Bearer ${api}`,
         'Accept': 'application/json',
-        'Origin': 'http://localhost:3000/',
       },
     });
 
@@ -31,4 +31,3 @@ export async function getSearch(searchTerm, searchLocation, sortBy) {
     return null;
   }
 }
-
