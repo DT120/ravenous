@@ -21,12 +21,23 @@ const SearchBar = ({ onSearch }) => {
   // Handle changes in the sorting dropdown
   const handleSortChange = (e) => {
     setSortBy(e.target.value);
+    handleSearch();
   };
 
   // Handle the search button click
   const handleSearch = () => {
+    console.log('searchTerm:', searchTerm);
+    console.log('searchLocation:', searchLocation);
+    console.log('sortBy:', sortBy);
     // Call the onSearch callback with search term, location, and sort option
-    onSearch({ searchTerm, searchLocation, sortBy });
+    onSearch(searchTerm, searchLocation, sortBy);
+  };
+
+  // Handle search with 'Enter' click
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
   };
 
   // Define sorting options as an object
@@ -34,6 +45,7 @@ const SearchBar = ({ onSearch }) => {
     'Best Match': 'best_match',
     'Highest Rated': 'rating',
     'Most Reviewed': 'review_count',
+    'Distance': 'distance'
   };
 
   return (
@@ -45,6 +57,7 @@ const SearchBar = ({ onSearch }) => {
         placeholder="Search..."
         value={searchTerm}
         onChange={handleInputChange}
+        onKeyDown={handleKeyPress}
       />
       {/* Input for the location */}
       <input
@@ -53,6 +66,7 @@ const SearchBar = ({ onSearch }) => {
         placeholder="Location..."
         value={searchLocation}
         onChange={handleInputChange}
+        onKeyDown={handleKeyPress}
       />
       {/* Dropdown menu for sorting options */}
       <select name="sortOptions" onChange={handleSortChange} value={sortBy}>
@@ -64,7 +78,7 @@ const SearchBar = ({ onSearch }) => {
         ))}
       </select>
       {/* Search button */}
-      <button onClick={handleSearch}>Search</button>
+      <button  onClick={handleSearch}>Search</button>
     </div>
   );
 };
